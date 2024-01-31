@@ -1,0 +1,26 @@
+<h1>login page</h1>
+
+<form [formGroup]="loginForm">
+    <h2>Log in</h2>
+    <div>
+        <label for="username">{{'username' | translate}}</label>
+        <input type="text" id="username" formControlName="username" placeholder="Enter Your Username">
+        <small *ngIf="this.loginForm.get('username')?.invalid && this.loginForm.get('username')?.touched">{{'badUsername' | translate}}</small>
+    </div>
+    <div>
+        <label for="password">{{'password' | translate}}</label>
+        <input type="password" id="password" formControlName="password" placeholder="Password">
+    </div>
+
+    <button (click)="loginUser()">{{'login' | translate}}</button>
+    <button (click)="goToRegister()">{{'register' | translate}}</button>
+</form>
+
+    <select class="form-select" (change)="ChangeLang($event)" name="" id="">
+        <option [selected]="lang==='en'" value="en">English</option>
+        <option [selected]="lang==='ge'" value="ge">ქართული</option>
+    </select>   
+
+    <p>{{'notRegisteredTexted' | translate}} | translate</p>
+    <button type="button" class="btn btn-secondary" (click)="goToRegister()">Register</button>
+

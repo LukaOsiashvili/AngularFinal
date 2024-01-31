@@ -1,0 +1,20 @@
+<form class="form" [formGroup]="registrationForm" (ngSubmit)="registerUser">
+    <div>
+        <div>
+            <label for="username">{{'username' | translate}}</label>
+            <input class="input" type="text" id="username" formControlName="username" placeholder="{{}}">
+            <small *ngIf="this.registrationForm.get('username')?.invalid && this.registrationForm.get('username')?.touched">{{'badUsername' | translate}}</small>
+        </div>
+
+        <div>
+            <label for="password">{{'password' | translate}}
+            <input class="input" type="password" id="password" formControlName="password" placeholder="Enter Password">
+            <small *ngIf="this.registrationForm.get('password')?.invalid && this.registrationForm.get('password')?.touched">{{'badPassword' | translate}}</small>           
+        </div>
+
+    </div>
+
+    <button class="submit" (click)="registerUser">{{'register' | translate}}</button>
+    <p>{{'alreadyRegistered' | translate}} Already Registered? Go To Login Page</p>
+    <button class="submit" (click)="goToLogin()">{{'login' | translate}}</button>
+</form>

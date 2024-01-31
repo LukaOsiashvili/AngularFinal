@@ -1,0 +1,10 @@
+{
+    "username":"Username",
+    "password":"Password",
+    "login":"Log In",
+    "register":"Register",
+    "notRegisteredText":"Not Registered yet? What You Waiting For? Go To Register Page Here",
+    "badUsername":"Username Is Required",
+    "badPassword":"Password Is Required",
+    "alreadyRegistered":"Already Registered? Go To Login Page"
+}
